@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "LoginComponent2"
+  "defaultProject": "LoginComponent2",
+  "cli": {
+    "analytics": false
+  }
 }
