@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-wrong-password-dialog',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WrongPasswordDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<WrongPasswordDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) 
+    public data: {msg:string}
+  ) {  }
 
-  ngOnInit(): void {
+  public redirectUrl:string = null;
+
+  closeDialog(redirectUrl?:string): void {
+    if (redirectUrl)  this.redirectUrl = redirectUrl;
+    this.dialogRef.close();
   }
 
+  ngOnInit(): void {
+   
+  }
 }

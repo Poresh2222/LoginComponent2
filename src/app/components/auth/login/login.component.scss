@@ -1,0 +1,36 @@
+:host {
+    .login-form-wrapper {
+
+
+        #login-form {
+            padding: 32px 0;
+            text-align: center;
+            //@include mat-elevation(16);
+
+            form {
+                width: 100%;
+                text-align: left;
+
+                mat-form-field {
+                    width: 100%;
+                }
+            }
+            .buttons {
+                margin: 10px 0;
+                text-transform: uppercase;
+                button {
+                    max-width: 400px;
+                    width: 100%;
+                    text-transform: uppercase;
+                }
+                > div {
+                    padding-top: 20px;
+                    text-align: center;
+                }
+            }
+        }
+        #loader {
+            position: absolute;
+        }
+    }
+}

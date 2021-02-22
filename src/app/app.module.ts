@@ -1,9 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState, makeStateKey } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { registerLocaleData } from '@angular/common'
+import localePl from '@angular/common/locales/pl';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+
+import { SharedMaterialModule } from './modules/shared-material.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { MainAuthComponent } from './components/auth/main-auth/main-auth.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { LoginDesktopComponent } from './components/auth/login/login-desktop/login-desktop.component';
@@ -22,11 +32,15 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { TopMenuItemComponent } from './components/top-menu/top-menu-item/top-menu-item.component';
 import { TopMenuButtonComponent } from './components/top-menu/top-menu-button/top-menu-button.component';
 import { TopMenuBalanceComponent } from './components/top-menu/top-menu-balance/top-menu-balance.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FrontPageComponent } from './components/front-page/front-page.component';
+import { StaticPageComponent } from './components/static-page/static-page.component';
+
+registerLocaleData(localePl, 'pl-PL');
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     MainAuthComponent,
     LoginComponent,
     LoginDesktopComponent,
@@ -44,11 +58,20 @@ import { TopMenuBalanceComponent } from './components/top-menu/top-menu-balance/
     TopMenuComponent,
     TopMenuItemComponent,
     TopMenuButtonComponent,
-    TopMenuBalanceComponent
+    TopMenuBalanceComponent,
+    FooterComponent,
+    FrontPageComponent,
+    StaticPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    SharedMaterialModule,
+    HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

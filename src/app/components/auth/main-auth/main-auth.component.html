@@ -1,1 +1,2 @@
-<p>main-auth works!</p>
+<app-login-button *ngIf="userInfo?.isLogged===-1"></app-login-button>
+<app-balance-user *ngIf="userInfo?.isLogged===1"></app-balance-user>

@@ -1,1 +1,20 @@
-<p>top-menu works!</p>
+<ng-container *ngIf="childData">
+    <div>
+        <img src="{{childData.topMenuBanner?.image.url}}" />
+    </div>
+    <mat-list class="top-menu">
+        <mat-list-item routerLink="/" (click)="callLinkClickedParent()" >
+            <mat-icon mat-list-icon>home</mat-icon>
+            Home
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        <ng-container *ngFor="let item of childData?.topMenuItems">
+            <mat-list-item routerLink="/{{ item.page.category }}/{{ item.page.name }}" (click)="callLinkClickedParent()" >
+            <mat-icon mat-list-icon>{{item.iconName}}</mat-icon>
+            {{ item.name }}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-list>
+    <app-logout (click)="callLinkClickedParent()" *loggedRender></app-logout>
+    </ng-container>

@@ -1,0 +1,21 @@
+:host {
+    
+    .body-wrapper {
+        max-width: 500px;
+        margin: auto;
+        mat-sidenav {
+            width: 80vw;
+            max-width: 420px;
+        }
+
+        .mat-drawer-container {
+            height: 100%;
+        }
+        #topMenuButton {
+            position: absolute;
+            z-index: 2;
+            top: 10px;
+        }
+        
+    }
+}

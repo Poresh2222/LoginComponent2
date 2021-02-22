@@ -1,0 +1,15 @@
+:host{
+    
+    .top-menu{
+        margin-top: 0;
+        padding: 0;
+        
+        mat-list-item{
+            height: 51px;
+            text-transform: capitalize;
+        }
+        .mat-menu-item{
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<div class="footer">
+    <div class="top-footer" fxLayout="column" fxLayoutAlign="center center">
+        <div class="language-grid">
+            <mat-grid-list cols="2" rowHeight="1:1">
+                <mat-grid-tile *ngFor="let item of childData?.languages">
+                    <img src="{{ item.flag.url }}" />
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <div class="footer-link-grid">
+            <div *ngFor="let item of childData?.footer?.footerLinks" routerLink="p/{{ item.name }}">
+                {{ item.displayName }}
+            </div>
+        </div>
+    </div>
+    <div class="middle-footer" fxLayout="column" fxLayoutAlign="center center">
+        {{childData?.footer?.licenceDescription}}
+    </div>
+</div>

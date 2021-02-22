@@ -1,0 +1,41 @@
+:host {
+    .footer {
+        margin-top: 25px;
+
+        .top-footer {
+            background-color: rgb(90, 90, 90);
+            min-height: 300px;
+
+            .language-grid {
+                width: 120px;
+            }
+
+            mat-grid-tile {
+                img {
+                    width: 40px;
+                }
+            }
+
+            .footer-link-grid {
+                text-align: center;
+                color: #fff;
+                text-transform: capitalize;
+                font-size: 14px;
+                text-align: center;
+                margin-top: 5px;
+
+                > div {
+                    padding: 3px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .middle-footer {
+            color: hsla(0, 0%, 69%, 0.5);
+            background-color: #3e3e3e;
+            text-align: center;
+            padding: 10px 10%;
+        }
+    }
+}

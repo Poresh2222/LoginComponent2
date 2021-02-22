@@ -1,1 +1,34 @@
-<p>login works!</p>
+<div class="login-form-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <div id="login-form">
+
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <mat-form-field>
+                    <mat-label>email address</mat-label>
+                    <input matInput type="text" placeholder="enter your email address" formControlName="login" cdkFocusInitial>
+                    <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="password" placeholder="password" formControlName="password">
+                </mat-form-field>
+
+
+                <div class="buttons">
+                    <div><button mat-flat-button color="warn" type="submit" i18n>log in</button></div>
+                    <div><button mat-button color="primary" (click)="lostPassword()" type='button'><span i18n>lost
+                                password</span><span style="color:brown">&nbsp;></span></button></div>
+                    <mat-divider></mat-divider>
+                    <div i18>don't you have an account yet?</div>
+                    <div><button mat-stroked-button color="primary" (click)="signup()" type='button'
+                            i18n>sign up</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div id="loader" [style.visibility]="formDelivered ? 'visible' : 'hidden'">
+        <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
+        </mat-progress-spinner>
+    </div> -->
+</div>

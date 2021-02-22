@@ -1,0 +1,4 @@
+@import 'src/mixins';
+:host {
+    @include static-page();
+}

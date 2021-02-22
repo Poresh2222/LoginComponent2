@@ -1,0 +1,14 @@
+:host{
+    .login-button {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin: 10px;
+        z-index: 2;
+
+        button {
+            text-transform: uppercase;
+            color: #fd5c3c;
+        }
+    }
+}
